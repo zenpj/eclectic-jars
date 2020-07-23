@@ -58,24 +58,24 @@ public class EclecticPlugin extends Plugin {
 	private ItemManager itemManager;
 
 	@Override
-	public void startUp(){
+	public void startUp() throws IOException {
 		overlayManager.add(overlay);
-                looting = false;
-			firstRun = false;
-			setUp();
-			if(!firstRun) {
-				data = loadJson();
-				jarsOpened = data.get(0).intValue();
-				moneySpent = data.get(1);
-				moneyGained = data.get(2);
-				nextMedium = data.get(3).intValue();
-			}
-			else{
-				data.add(0, 0.0);
-				data.add(1, 0.0);
-				data.add(2, 0.0);
-				data.add(3, 0.0);
-			}
+		looting = false;
+		firstRun = false;
+		setUp();
+		if(!firstRun) {
+			data = loadJson();
+			jarsOpened = data.get(0).intValue();
+			moneySpent = data.get(1);
+			moneyGained = data.get(2);
+			nextMedium = data.get(3).intValue();
+		}
+		else{
+			data.add(0, 0.0);
+			data.add(1, 0.0);
+			data.add(2, 0.0);
+			data.add(3, 0.0);
+		}
 	}
 
 	@Override
